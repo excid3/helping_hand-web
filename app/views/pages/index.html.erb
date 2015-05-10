@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1>
+    <div class="pull-right">
+      <%= link_to 'New Page', new_page_path, class: "btn btn-primary" %>
+    </div>
+    Listing Pages
+  </h1>
+
+  <% @pages.each do |page| %>
+    <div>
+      <%= link_to exception_message_path(page.exception.class_name, page.exception.message) do %>
+        <h4><span class="text-muted"><%= page.exception.class_name %></span> <%= page.exception.message %></h4>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

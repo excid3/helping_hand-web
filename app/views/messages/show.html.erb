@@ -1,0 +1,37 @@
+<div class="container">
+  <% if user_signed_in? %>
+    <p class="pull-right">
+      <% if @exception.page.present? %>
+        <%= link_to 'Edit', edit_page_path(@exception.page), class: "btn btn-primary" %>
+        <%= link_to 'Destroy', @exception.page, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      <% else %>
+        <%= link_to 'Add Page', new_page_path(exception_id: @exception.id), class: "btn btn-primary" %>
+      <% end %>
+    </p>
+  <% end %>
+
+  <h1>
+    <small><%= @exception.class_name %></small><br/>
+    <%= @exception.message %>
+  </h1>
+
+  <% if @exception.page.present? %>
+    <%= markdownify @exception.page.body %>
+  <% end %>
+
+  <hr />
+
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES * * */
+      var disqus_shortname = 'helpinghand-rails';
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>

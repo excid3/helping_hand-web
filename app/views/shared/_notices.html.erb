@@ -1,0 +1,17 @@
+<% if notice %>
+  <div class="container">
+    <div class="alert alert-info">
+      <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+      <%= notice.html_safe %>
+    </div>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="container">
+    <div class="alert alert-danger">
+      <a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+      <%= alert.html_safe %>
+    </div>
+  </div>
+<% end %>

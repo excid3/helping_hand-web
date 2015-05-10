@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h2 class="page-header text-center">Account Settings</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+          <small class="help-block">Leave blank if you don't want to change it</small>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :current_password %>
+          <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+          <small class="help-block">We need your current password to confirm your changes</small>
+        </div>
+
+        <div class="form-group">
+          <%= f.button "Save Changes", class: "btn btn-danger btn-lg btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Saving..."} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

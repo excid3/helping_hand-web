@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+
+      <h2 class="page-header text-center">Welcome Back!</h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%#= f.label :email, "Email Address" %>
+          <%= f.email_field :email, autofocus: true, placeholder: "Email Address", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%#= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.button "Sign in", class: "btn btn-success btn-lg btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Signing in..."} %>
+        </div>
+      <% end %>
+
+      <div class="text-center">
+        <p><%= link_to "Forgot your password?", new_password_path(resource_name) %></p>
+      </div>
+    </div>
+  </div>
+</div>

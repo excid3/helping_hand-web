@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Recent Exceptions</h1>
+  <% @exceptions.each do |exception| %>
+    <div>
+      <%= link_to exception_message_path(exception.class_name, exception.message) do %>
+        <%= exception.class_name %> - <%= exception.message %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= will_paginate @exceptions, renderer: BootstrapPagination::Rails %>
+</div>
