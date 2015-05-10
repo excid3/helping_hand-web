@@ -1,3 +1,11 @@
+<% if !user_signed_in? %>
+  <div class="hero">
+    <h1>Don't dread the error page anymore</h1>
+    <p>Embedded help in your Ruby on Rails error pages for learning how to fix bugs when they arise.</p>
+    <%= image_tag "https://s3.amazonaws.com/f.cl.ly/items/3Y1G0P3W453x1v3s1k27/Screen%20Shot%202015-05-09%20at%2010.13.23%20PM.png" %>
+  </div>
+<% end %>
+
 <div class="container">
   <h1>Recent Exceptions</h1>
   <% @exceptions.each do |exception| %>
