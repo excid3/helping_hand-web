@@ -4,17 +4,32 @@
     <p>Embedded help in your Ruby on Rails error pages for learning how to fix bugs when they arise.</p>
     <%= image_tag "https://s3.amazonaws.com/f.cl.ly/items/3Y1G0P3W453x1v3s1k27/Screen%20Shot%202015-05-09%20at%2010.13.23%20PM.png" %>
   </div>
+
+  <article class="installation">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <h2>Installation</h2>
+        <p>Add this to your Gemfile</p>
+        <pre><code>group :development do
+  gem "helping_hand"
+end</code></pre>
+        <p>Run <code>bundle install</code>, restart your Rails app, and you're all set.</p>
+      </div>
+    </div>
+  </article>
 <% end %>
 
-<div class="container">
-  <h1>Recent Exceptions</h1>
-  <% @exceptions.each do |exception| %>
-    <div>
-      <%= link_to exception_message_path(exception.class_name, exception.message) do %>
-        <%= exception.class_name %> - <%= exception.message %>
-      <% end %>
-    </div>
-  <% end %>
+<article>
+  <div class="container">
+    <h1>Recent Exceptions</h1>
+    <% @exceptions.each do |exception| %>
+      <div>
+        <%= link_to exception_message_path(exception.class_name, exception.message) do %>
+          <%= exception.class_name %> - <%= exception.message %>
+        <% end %>
+      </div>
+    <% end %>
 
-  <%= will_paginate @exceptions, renderer: BootstrapPagination::Rails %>
-</div>
+    <%= will_paginate @exceptions, renderer: BootstrapPagination::Rails %>
+  </div>
+</article>
