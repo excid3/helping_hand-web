@@ -1,3 +1,5 @@
 class Page < ActiveRecord::Base
-  belongs_to :exception, class_name: "HelpingHand::Exception"
+  def exceptions
+    HelpingHand::Exception.where(class_name: class_name, message: message)
+  end
 end

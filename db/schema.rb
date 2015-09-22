@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510003637) do
+ActiveRecord::Schema.define(version: 20150922160144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,14 @@ ActiveRecord::Schema.define(version: 20150510003637) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.integer  "exception_id"
     t.text     "body"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "class_name"
+    t.string   "message"
   end
+
+  add_index "pages", ["class_name", "message"], name: "index_pages_on_class_name_and_message", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

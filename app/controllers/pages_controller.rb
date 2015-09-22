@@ -10,7 +10,7 @@ class PagesController < ApplicationController
 
   # GET /pages/new
   def new
-    @page = Page.new exception_id: params[:exception_id]
+    @page = Page.new(page_params)
   end
 
   # GET /pages/1/edit
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to exception_message_path(@page.exception.class_name, @page.exception.message), notice: 'Page was successfully created.' }
+        format.html { redirect_to exception_message_path(@page.class_name, @page.message), notice: 'Page was successfully created.' }
         format.json { render :show, status: :created, location: @page }
       else
         format.html { render :new }
@@ -38,7 +38,7 @@ class PagesController < ApplicationController
   def update
     respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to exception_message_path(@page.exception.class_name, @page.exception.message), notice: 'Page was successfully updated.' }
+        format.html { redirect_to exception_message_path(@page.class_name, @page.message), notice: 'Page was successfully updated.' }
         format.json { render :show, status: :ok, location: @page }
       else
         format.html { render :edit }
@@ -66,6 +66,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:exception_id, :body)
+      params.require(:page).permit(:body, :class_name, :message)
     end
 end

@@ -18,6 +18,8 @@
         <% if user_signed_in? %>
           <li><%= link_to "Pages", pages_path %></li>
         <% end %>
+        <li><%= link_to content_tag(:span, nil, class: "octicon octicon-ruby"), "https://rubygems.org/gems/helping_hand" %></li>
+        <li><%= link_to content_tag(:span, nil, class: "octicon octicon-mark-github"), "https://github.com/excid3/helping_hand-gem" %></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

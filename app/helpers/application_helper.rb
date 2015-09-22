@@ -8,6 +8,6 @@ module ApplicationHelper
                             lax_html_blocks: true,
                             strikethrough: true,
                             superscript: true
-                           ).render(text).html_safe
+                           ).render(text.to_s).html_safe
   end
 end

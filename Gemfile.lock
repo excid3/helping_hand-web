@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/tarebyte/octicons-rails.git
+  revision: 6c24f7b02706f2741c61f29e353e1c7156f86cf2
+  specs:
+    octicons-rails (2.1.1)
+      railties (>= 3.2, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -170,6 +177,7 @@ DEPENDENCIES
   devise (~> 3.4.1)
   jbuilder (~> 2.0)
   jquery-rails
+  octicons-rails!
   pg (~> 0.18.1)
   rails (= 4.2.1)
   redcarpet (~> 3.2.3)
