@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.includes(:exception)
+    @pages = Page.all
   end
 
   # GET /pages/new

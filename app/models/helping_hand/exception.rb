@@ -8,7 +8,7 @@ class HelpingHand::Exception < ActiveRecord::Base
   end
 
   def page
-    Page.where(class_name: class_name, message: message).first
+    @page ||= Page.where(class_name: class_name, message: message).first
   end
 
   private

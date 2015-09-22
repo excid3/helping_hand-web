@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.1'
 gem 'pg', '~> 0.18.1'
 gem 'sass-rails', '~> 5.0'
@@ -19,7 +18,8 @@ end
 
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'devise', '~> 3.4.1'
+gem 'octicons-rails', github: 'tarebyte/octicons-rails'
+gem 'paper_trail', '~> 4.0.0'
+gem 'redcarpet', '~> 3.2.3'
 gem 'will_paginate', '~> 3.0.7'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
-gem 'redcarpet', '~> 3.2.3'
-gem 'octicons-rails', github: 'tarebyte/octicons-rails'

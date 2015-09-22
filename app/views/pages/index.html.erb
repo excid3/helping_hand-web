@@ -9,8 +9,8 @@
 
   <% @pages.each do |page| %>
     <div>
-      <%= link_to exception_message_path(page.exception.class_name, page.exception.message) do %>
-        <h4><span class="text-muted"><%= page.exception.class_name %></span> <%= page.exception.message %></h4>
+      <%= link_to exception_message_path(page.class_name, page.message) do %>
+        <h4><span class="text-muted"><%= page.class_name %></span> <%= page.message %></h4>
       <% end %>
     </div>
   <% end %>
